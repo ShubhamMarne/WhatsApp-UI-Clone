@@ -32,11 +32,7 @@ const Sidebar = () => {
         </div>
 
         <div className="sidebar_chats">
-<<<<<<< HEAD
             <SidebarChat addNewChat/>
-=======
-            <SidebarChat />
->>>>>>> 1f276bf00c13cd12e5d3bc80fb3fbb2a3892dc0c
             <SidebarChat />
             <SidebarChat />
         </div>
