@@ -1,4 +1,5 @@
 .sidebarChat {
+<<<<<<< HEAD
     display: flex;
     padding: 20px;
     cursor: pointer;
@@ -17,4 +18,7 @@
 
 .sidebarChat_info {
     margin-left: 15px;
+=======
+    
+>>>>>>> 1f276bf00c13cd12e5d3bc80fb3fbb2a3892dc0c
 }
