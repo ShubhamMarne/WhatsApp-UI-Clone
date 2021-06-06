@@ -1,5 +1,6 @@
 import "./App.css";
 import Sidebar from "./Sidebar";
+import Chat from "./Chat";
 
 const App = () =>  {
 
@@ -7,7 +8,7 @@ const App = () =>  {
     <div className="app"> 
         <div className="app_body">
           <Sidebar/>
-        {/*  chat */}
+          <Chat />
         </div>
     </div>
   );
