@@ -7,12 +7,14 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import './Sidebar.css';
 import db from './firebase';
+import { useStateValue  } from './StateProvider';
 
 const Sidebar = () => {
     const [rooms, setRooms] = useState([]);
+    const [{user}, dispatch] = useStateValue(); 
 
     useEffect(() => {
-        db.collection('rooms').onSnapshot(snapshot => {
+        const unsubscribe =  db.collection('rooms').onSnapshot(snapshot => {
             setRooms(snapshot.docs.map(
                 doc => ({
                     id :doc.id,
@@ -20,12 +22,16 @@ const Sidebar = () => {
                 })
             ));
         });
+
+        return () => {
+            unsubscribe();
+        }
     }, [])
 
     return (
     <div className="sidebar">
         <div className="sidebar_header">
-            <Avatar/>
+            <Avatar src={user?.photoURL}/>
             <div className="sidebar_headerRight">
                 <IconButton>
                     <DonutLarge></DonutLarge>
